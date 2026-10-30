@@ -1,0 +1,8 @@
+{
+  "appId": "com.jogos.macacosaltitante",
+  "appName": "Macaco Saltitante",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

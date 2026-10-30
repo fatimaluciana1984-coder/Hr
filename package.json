@@ -1,0 +1,19 @@
+{
+  "name": "macaco-saltitante",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jogo Macaco Saltitante para web e Android",
+  "scripts": {
+    "copy:web": "node scripts/copy-web.js",
+    "android:add": "npm run copy:web && cap add android",
+    "android:sync": "npm run copy:web && cap sync android",
+    "android:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/core": "^7.4.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.2"
+  }
+}

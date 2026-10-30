@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+
+:root { font-family: 'Nunito', 'Trebuchet MS', sans-serif; color: #fffdf0; background: #087f73; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; min-height: 100dvh; margin: 0; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); background: radial-gradient(ellipse at 50% 0%, #59d78b 0, #18ae81 34%, #087f73 100%); }
+.app { width: min(100%, 1000px); }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; color: #fffdf0; font-size: clamp(16px, 4vw, 22px); font-weight: 800; text-shadow: 0 2px 0 #08775e; }
+.logo b { color: #fff17d; }
+.logo-monkey { display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid #fff3a4; border-radius: 15px; background: #ff9f43; font-size: 27px; box-shadow: 0 4px 0 #cc6930; }
+.score-box { display: grid; justify-items: center; min-width: 82px; padding: 6px 14px 7px; border: 2px solid #fff5aa; border-radius: 15px; background: #ffca4b; color: #75411d; box-shadow: 0 4px 0 #d98c2c; }
+.score-box span { font-size: 9px; font-weight: 900; letter-spacing: 1.4px; }
+.score-box strong { font-size: 23px; line-height: 1.1; }
+.game-frame { position: relative; overflow: hidden; border: 5px solid #fff2a4; border-radius: 24px; background: #29bbb2; box-shadow: 0 10px 0 #08775e, 0 23px 45px #034e444d; }
+canvas { display: block; width: 100%; height: min(66vh, 570px); height: min(66dvh, 570px); min-height: 390px; touch-action: none; }
+.overlay { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; background: linear-gradient(90deg, #064a45dc 0%, #07594bc9 52%, #08715d26 100%); transition: opacity .22s ease, visibility .22s ease; }
+.overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.welcome-card { width: min(100%, 390px); margin-right: auto; padding: 0 0 0 3%; }
+.big-monkey { margin-bottom: 0; font-size: 55px; filter: drop-shadow(0 4px 0 #704019); }
+.tagline { margin: 0 0 8px; color: #ffec79; font-size: 11px; font-weight: 900; letter-spacing: 2px; }
+h1 { margin: 0; color: #fffdf0; font-size: clamp(46px, 8vw, 72px); font-weight: 900; letter-spacing: -3px; line-height: .92; text-shadow: 0 4px 0 #08644d; }
+h1 span { color: #ffdf59; }
+.intro { max-width: 330px; margin: 17px 0 20px; color: #effff3; font-size: 15px; font-weight: 700; line-height: 1.55; }
+.play-button, .install-button { min-height: 49px; border: 0; border-radius: 15px; padding: 11px 19px; background: #ffca4b; color: #673d16; font: 900 15px 'Nunito', sans-serif; box-shadow: 0 5px 0 #d88a2e; cursor: pointer; transition: transform .12s, filter .12s; }
+.play-button { display: inline-flex; align-items: center; gap: 16px; }
+.play-button:hover, .install-button:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.play-button:active, .install-button:active { transform: translateY(3px); box-shadow: 0 2px 0 #d88a2e; }
+.install-button { display: block; margin-top: 11px; background: #a9f071; box-shadow: 0 5px 0 #62ae52; }
+.install-button[hidden] { display: none; }
+.small-hint { margin: 14px 0 0; color: #d4f7df; font-size: 11px; font-weight: 700; }
+.help { display: flex; align-items: center; gap: 8px; padding: 15px 5px 0; color: #efffeb; font-size: 12px; text-shadow: 0 1px 2px #05604f; }
+.help b { color: #fff17d; }
+.help-right { margin-left: auto; color: #fff17d; font-weight: 800; }
+@media (max-width: 600px) {
+  body { padding-right: 10px; padding-left: 10px; }
+  .topbar { margin-bottom: 11px; }
+  .logo-monkey { width: 39px; height: 39px; }
+  .game-frame { border-width: 4px; border-radius: 19px; }
+  canvas { height: 67vh; height: 67dvh; min-height: 390px; max-height: 600px; }
+  .overlay { background: linear-gradient(90deg, #064a45e8, #07594bcf 72%, #08715d50); }
+  .welcome-card { padding-left: 1%; }
+  .intro { max-width: 285px; font-size: 14px; }
+  .help { flex-wrap: wrap; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
